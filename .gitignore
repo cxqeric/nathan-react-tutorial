@@ -1,0 +1,4 @@
+*.swp
+*.txt
+
+node_modules/
