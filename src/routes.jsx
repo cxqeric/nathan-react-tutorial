@@ -16,34 +16,25 @@ export const routes = [
 	{
 		path: '/about',
 		component: About,
-		routes: [
-			{
-				path: '/about/react',
-				component: AboutReact
-			},
-			{
-				path: '/about/angular',
-				component: AboutAngular
-			}
-		]
+		exact: true
+	},
+	{
+		path: '/about/react',
+		component: AboutReact,
+		exact: true
+	},
+	{
+		path: '/about/angular',
+		component: AboutAngular,
+		exact: true
 	}
 ];
-
-export const RouteWithSubRoutes = (route) => {
-	return (
-		<Route 
-			path={route.path}
-			exact={route.exact} 
-			render={(props) => <route.component { ...props } routes={route.routes} />}
-		/>
-	);
-}
 
 export default () => {
 	return (
 		<div>
 		{
-			routes.map((route, i) => <RouteWithSubRoutes key={i} { ...route } />)
+			routes.map((route, i) => <Route key={i} { ...route } />)
 		}
 		</div>
 	);

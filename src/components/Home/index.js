@@ -7,7 +7,7 @@ export class Home extends Component {
 		return (
 			<div>
 				<Link to='/about'>About</Link>
-				<h1>The React Tutorial Nathan Wishes He Had</h1>
+				<h1>Building Kickass React Applications With Nathan</h1>
 			</div>
 		);
 	}

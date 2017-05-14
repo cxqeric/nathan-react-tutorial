@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { RouteWithSubRoutes } from '../../routes';
-
 
 export const About = ({ routes }) => {
 	return (
@@ -15,11 +13,6 @@ export const About = ({ routes }) => {
 				<li><Link to='/about/angular'>Angular</Link></li>
 			</ul>
 
-			{
-				routes.map((route, i) => 
-					<RouteWithSubRoutes key={i} { ...route } />
-				)
-			}
 		</div>
 	);
 }
