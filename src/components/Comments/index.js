@@ -12,18 +12,17 @@ export default class Comments extends Component {
 			comments: []
 		};
 
-		this.handleSubmit = (text, user) => this._handleSubmit(text, user);
 	}
 
-	_handleSubmit(text, user) {
-		this.setState({
-			comments: [...this.state.comments, {text, user} ]
-		})
+	handleSubmit(text, user) {
+		this.setState(prevState => ({
+			comments: [...prevState.comments, {text, user} ]
+		}))
 	}
 
 	render() {
 		return (<div>
-			<CommentsBox parentSubmit={this.handleSubmit} />
+			<CommentsBox parentSubmit={(text, user) => this.handleSubmit(text, user)} />
 			<CommentsList comments={this.state.comments} />
 		</div>);
 	}

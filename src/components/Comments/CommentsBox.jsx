@@ -10,20 +10,17 @@ export default class CommentsBox extends Component {
 			user: ''
 		};
 
-		this.handleTextChange = (e) => this._handleTextChange(e);
-		this.handleUserChange = (e) => this._handleUserChange(e);
-		this.handleSubmit = (e) => this._handleSubmit(e);
 	}
 
-	_handleTextChange(e) {
+	handleTextChange(e) {
 		this.setState({ text: e.target.value });
 	}
 
-	_handleUserChange(e) {
+	handleUserChange(e) {
 		this.setState({ user: e.target.value });
 	}
 
-	_handleSubmit(e) {
+	handleSubmit(e) {
 		this.props.parentSubmit(this.state.text, this.state.user);
 
 		this.setState({
@@ -39,15 +36,15 @@ export default class CommentsBox extends Component {
 				placeholder="Name"
 				type="text"
 				value={this.state.user}
-				onChange={this.handleUserChange}
+				onChange={(e) => this.handleUserChange(e)}
 			/>
 			<textarea 
 				placeholder="Leave a nice comment"
 				style={{display: 'block'}} 
 				value={this.state.text} 
-				onChange={this.handleTextChange} 
+				onChange={(e) => this.handleTextChange(e)} 
 			/>
-			<button onClick={this.handleSubmit}>Post</button>
+			<button onClick={() => this.handleSubmit()}>Post</button>
 		</div>);
 	}
 }
