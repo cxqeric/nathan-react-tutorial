@@ -8,22 +8,16 @@ export default class Comments extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			comments: []
-		};
-
 	}
 
 	handleSubmit(text, user) {
-		this.setState(prevState => ({
-			comments: [...prevState.comments, {text, user} ]
-		}))
+		this.props.handleSubmit({ user, text });
 	}
 
 	render() {
 		return (<div>
 			<CommentsBox parentSubmit={(text, user) => this.handleSubmit(text, user)} />
-			<CommentsList comments={this.state.comments} />
+			<CommentsList comments={this.props.comments} />
 		</div>);
 	}
 }
