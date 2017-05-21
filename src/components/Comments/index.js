@@ -5,10 +5,6 @@ import CommentsBox from './CommentsBox';
 
 
 export default class Comments extends Component {
-	constructor(props) {
-		super(props);
-
-	}
 
 	handleSubmit(text, user) {
 		this.props.handleSubmit({ user, text });

@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 
 import { Home } from './components/Home';
 import { About } from './components/About';
-import AboutReact from './components/React';
-import { AboutAngular } from './components/Angular';
+import ConnectedAboutReact from './components/React';
+import ConnectedAboutAngular from './components/Angular';
 
 
 export const routes = [
@@ -20,12 +20,12 @@ export const routes = [
 	},
 	{
 		path: '/about/react',
-		component: AboutReact,
+		component: ConnectedAboutReact,
 		exact: true
 	},
 	{
 		path: '/about/angular',
-		component: AboutAngular,
+		component: ConnectedAboutAngular,
 		exact: true
 	}
 ];

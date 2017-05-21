@@ -22,7 +22,7 @@ export const AboutAngular = ({ dispatch, comments }) => {
 } 
 
 export default connect(
-	(state) => {
+	(state) => ({
 		comments: state.comments.angularComments
-	}
+	})
 )(AboutAngular);
